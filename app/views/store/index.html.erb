@@ -1,0 +1,17 @@
+<p id='notice'><%= notice %></p>
+<h1> Your Pragmatic Catalog</h1>
+
+<% cache @products do %>
+	<% @products.each do |prod|%>
+		<% cache prod do %> 
+			<div class='entry'>
+				<%= image_tag(prod.image_url) %>
+				<h3><%= prod.title %></h3>
+				<%= sanitize(prod.description) %> <!-- Eu não entendi o que faz o sanitize - acredito que seja para o uso de tags com <p> -->
+				<div class='price_line'>
+					<span class='price'><%=  sprintf("R$ %0.02f", prod.price) %></span>
+				</div>
+			</div>
+		<% end %>
+	<% end %>
+<% end %>

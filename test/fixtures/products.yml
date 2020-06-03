@@ -5,10 +5,16 @@ one:
   title: "Branco"
   description: "MyText"
   image_url: "iphone1.jpg"
-  price: 9.99
+  price: 0
 
 two:
   title: "My2"
   description: "MyText"
   image_url: "iphone8.jpg"
   price: 9.99
+
+ruby:
+  title: Programming Ruby 1.9
+  description: <p> Lorem ipsum cupidatat dolor tempor aliqua ea non dolor ex occaecat.</p>
+  price: -1
+  image_url: "iphone8.jpg"
