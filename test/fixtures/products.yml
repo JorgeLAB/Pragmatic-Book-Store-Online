@@ -1,0 +1,14 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+#Ao inves de você toda vez ficar criando valos no lass ProductTest < ActiveSupport::TestCase você pode pega-los daqui
+# 
+one:
+  title: "Branco"
+  description: "MyText"
+  image_url: "iphone1.jpg"
+  price: 9.99
+
+two:
+  title: "My2"
+  description: "MyText"
+  image_url: "iphone8.jpg"
+  price: 9.99
