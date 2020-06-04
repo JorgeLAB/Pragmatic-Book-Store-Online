@@ -14,7 +14,7 @@ two:
   price: 9.99
 
 ruby:
-  title: Programming Ruby 1.9
+  title: "1 \u00D7 Programming Ruby 1.9"
   description: <p> Lorem ipsum cupidatat dolor tempor aliqua ea non dolor ex occaecat.</p>
-  price: -1
+  price: 21
   image_url: "iphone8.jpg"
