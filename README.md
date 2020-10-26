@@ -1,6 +1,5 @@
  ![Logo of the project](https://github.com/JorgeLAB/Pragmatic-Book-Store-Online/blob/master/public/readme_images/logo2.png)
  
-
 ![](https://img.shields.io/github/issues/JorgeLAB/Pragmatic-Book-Store-Online)
 ![](https://img.shields.io/github/forks/JorgeLAB/Pragmatic-Book-Store-Online)
 ![](	https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2FJorgeLAB%2FPragmatic-Book-Store-Online%2F)
@@ -39,14 +38,11 @@
  ## How to use
 
  ### Home
- ![home_image](https://github.com/JorgeLAB/Pragmatic-Book-Store-Online/blob/master/public/readme_images/home_pragmatic_catalog.png)
+
 
  ### Cart
- ![cart_page](https://github.com/JorgeLAB/Pragmatic-Book-Store-Online/blob/master/public/readme_images/page_cart.png)
 
  ### Cart notification
-
- ![notification](https://github.com/JorgeLAB/Pragmatic-Book-Store-Online/blob/master/public/readme_images/page_error.png)
 
  ## Features
 
@@ -59,10 +55,7 @@
      - In case of sensitive bugs like security vulnerabilities, please contact
        YOUR EMAIL directly instead of using issue tracker. We value your effort
        to improve the security and privacy of this project!
-   [![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://youtu.be/vt5fpE0bzSY)
    
-   [![Demo CountPages alpha](https://share.gifyoutube.com/KzB6Gb.gif)](https://www.youtube.com/watch?v=ek1j272iAmc)
-
 
 
  ## Versioning
