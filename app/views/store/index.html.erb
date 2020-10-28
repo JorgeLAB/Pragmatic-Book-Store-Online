@@ -5,7 +5,6 @@
 	<% @products.each do |prod|%>
 		<% cache prod do %> 
 			<div class='entry'>
-				<%= image_tag(prod.image_url) %>
 				<h3><%= prod.title %></h3>
 				<%= sanitize(prod.description) %> <!-- Eu não entendi o que faz o sanitize - acredito que seja para o uso de tags com <p> -->
 				<div class='price_line'>
