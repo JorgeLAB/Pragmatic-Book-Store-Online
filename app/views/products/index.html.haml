@@ -1,22 +1,21 @@
 %p#notice= notice
-%h1 Products
-%table
-  %tbody
-    - @products.each do |product|
-      %tr{:class => "#{cycle('list_line_odd', 'list_line_even')}"}
-        %td
-          %img{:src => "assets/"+product.image_url} 
-        %td.list_description
-          %dl
-            %dt= product.title
-            %dd
-              = truncate(strip_tags(product.description), length: 80)
-        %td.list_actions
-          = link_to 'Show', product
-          %br/
-          = link_to 'Edit', edit_product_path(product)
-          %br/
-          = link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }
-%br/
-%br/
-= link_to 'New Product', new_product_path
+%div.container
+  %h1.title.is-2 Products
+  %table.table
+    %tbody
+      - @products.each do |product|
+        %tr{:class => "#{cycle('list_line_odd', 'list_line_even')}"}
+          %td.image
+            %img{:src => "assets/"+product.image_url} 
+          %td.list_description
+            %dl
+              %dt= product.title
+              %dd= truncate(strip_tags(product.description), length: 80)
+          %td.list_actions
+            %div.buttons
+              %button.button.is-fullwidth.is-light.show_product.is-medium= link_to 'Show', product            
+              %button.button.is-fullwidth.is-light.edit_product.is-medium= link_to 'Edit', edit_product_path(product)
+              %button.button.is-fullwidth.is-danger.destroy_product.is-medium= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }
+  
+  %div.buttons
+    %button.button.is-light.new_product.is-large= link_to 'New Product', new_product_path

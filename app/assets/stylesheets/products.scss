@@ -1,3 +1,94 @@
 // Place all the styles related to the Products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.products{
+  /* Product table */
+  .container{
+  	margin: 30px 5%;
+  }
+
+  table{
+  	border-collapse: collapse;
+  }
+
+  table tr td {
+    padding: 15px;
+    vertical-align: top;
+  }
+
+  table td {
+
+  	/*Books Images*/
+  	
+  	img{
+  		display: block;
+  		max-width: 100%;
+  		height: auto;
+  		border-radius: 10px;
+  		box-shadow: 1px 2px 6px 1px #0000005e;
+  		transition: 120ms ease-in-out; /* Ver sobre*/
+  	}
+  	
+  	/*When going over the image we will modifyit with a gray tone*/
+
+  	img:hover {
+  		filter: grayscale(1);
+  		transform: scale(1.02);
+  		box-shadow: 1px 2px 6px 3px #3f3f3f5e;
+		}	
+  }
+
+  /*Styles even lines*/
+
+  .list_line_even {
+		background: #fff;
+		dt, dd{
+			color: #000;
+		}
+	}
+
+  /*Styles odd lines*/
+	
+	.list_line_odd {
+		background: #9a56b3;
+		dt, dd{
+			color: #FFF;
+		}
+	}
+
+  .list_description{
+    width: 60%;
+    line-height: 1.6em;
+    dl{
+      margin: 0;
+    }
+    dt{
+      font-weight: bold;
+			font-size: 2em;     
+    }
+    dd {
+      margin-top: 20px;
+      font-size: 1.6em;
+    }
+  }
+
+  /*Button for actions*/
+
+	.buttons{
+		.show_product a{
+		}
+		.edit_product a{
+		}
+		.destroy_product a{
+			color: #edce68;
+		}
+		.new_product{
+			margin-top: 50px;
+			a{ 
+				color: #3273dc;
+			}
+		}
+	}
+}
+
+
