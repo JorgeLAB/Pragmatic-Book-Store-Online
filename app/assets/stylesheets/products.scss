@@ -91,4 +91,24 @@
 	}
 }
 
+.show-product{
+    /*Books Images*/
+    
+    img{
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 1px 2px 6px 1px #0000005e;
+      transition: 120ms ease-in-out; /* Ver sobre*/
+    }
+    
+    /*When going over the image we will modifyit with a gray tone*/
 
+    img:hover {
+      filter: grayscale(1);
+      transform: scale(1.02);
+      box-shadow: 1px 2px 6px 3px #3f3f3f5e;
+    } 
+
+}

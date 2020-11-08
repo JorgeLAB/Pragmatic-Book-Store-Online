@@ -1,15 +1,27 @@
-%p#notice= notice
-%p
-  %strong Title:
-  = @product.title
-%p
-  %strong Description:
-  = @product.description
-%p
-  %strong Image url:
-%p
-  %strong Price:
-  = @product.price
-= link_to 'Edit', edit_product_path(@product)
-|
-= link_to 'Back', products_path
+%div.container
+	-if notice != nil 
+		%div.notification.is-primary.is-light= notice
+
+	%div.container
+		%h1.title.is-1
+			= @product.title
+		
+		%div.columns.is-mobile.is-centered
+			%div.column.is-half.show-product
+				%img.image{:src => "http://localhost:3000/assets/#{@product.image_url}" }		
+		
+		%h3.subtitle.is-3
+			Description:
+		%div.content.is-medium
+			= @product.description
+			
+		
+		%h3.subtitle.is-3
+			Price: 
+			= "R$ #{@product.price}"
+
+		%div.buttons.mt-4
+			%button.button.is-info.is-outlined
+				= link_to 'Voltar', products_path
+			%button.button.is-info.is-outlined
+				= link_to 'Editar', edit_product_path(@product)
