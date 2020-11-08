@@ -1,0 +1,7 @@
+%p#notice= notice
+%p
+  %strong Quantity:
+  = @add_quantity_to_line_item.quantity
+= link_to 'Edit', edit_add_quantity_to_line_item_path(@add_quantity_to_line_item)
+|
+= link_to 'Back', add_quantity_to_line_items_path

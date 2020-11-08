@@ -1,26 +1,123 @@
-=form_with(model: product, local: true) do |form|
-  =if product.errors.any?
-    #error_explanation
-      %h2=pluralize(product.errors.count, "error")+" prohibited this product from being saved:"
-      %ul
-        =product.errors.full_messages.each do |message|
-          %li= message
+%div.container
+  %h1.title Novo Produto
+  = form_with(model: product, local: true) do |f|
+    -if product.errors.any?
+      %article.message 
+        %div.message-header
+          %h2
+            -pluralize(@product.errors.count, "error")
+            Produdo não pode ser criado:
+        %div.message-body
+          %ul
+            -product.errors.full_messages.each do |message|
+              %li= message 
+    %div.field
+      %f.label Titulo
+      %div.control.has-icons-right
+        =f.text_field(:title, class: "input is-large")
+        /
+          %span.icon.is-small.is-right
+            %i.fas.fa-check.fa-xs
 
-  .field
-    =form.label :title
-    =form.text_field :title
+    %div.field
+      %f.label  Descrição
+      - if product.description == nil || product.description == ""  
+        =f.text_area(:description, class: "textarea")
+      - else
+        - texto = product.description.gsub(/((<|<\/)(\w+)(>))/){""}.strip
+        =f.text_area :description, :value => texto, :class => "textarea"
+    
+    %div.field
+      %f.label Link para imagem
+      %div.control
+        =f.text_field(:image_url, class: "input")
+  
+    %div.field
+      %f.label Preço do livro
+      %div.control
+        =f.text_field(:price, class: "input")
 
-  .field
-    =form.label :description
-    =form.text_area :description, rows: 10, cols: 60
+    =f.submit("Criar Produto", class:"button button is-info is-outlined")
+    
 
-  .field
-    =form.label :image_url
-    =form.text_field :image_url
+-if false
+  %div.control
+    %button.button.is-link{:type => "submit"} Enviar para o Catálogo
 
-  .field
-    =form.label :price
-    =form.text_field :price
+  =form_with(model: product, local: true) do |form|
+    - if product.errors.any?
+      #error_explanation
+        %h2
+          = pluralize(product.errors.count, "error")+" prohibited this product from being saved:"
+        %ul
+          - product.errors.full_messages.each do |message|
+            %li= message
 
-  .actions
-    =form.submit
+    %div.field
+      %label.label Título
+      %div.control 
+        %form.input{:type =>"text", :placeholder => "#{product.title}"}
+  
+    %div.field
+      %form.label  Descrição
+      %div.control
+        /
+          Estamos subtraindo as tags do description e tirando os espaços vazios
+        - if @product.description != nil  
+          %form.textarea{:type => "textarea", :placeholder => "#{product.description.gsub(/((<|<\/)(\w+)(>))/){""}}".strip}
+        - else
+          =form.text_area :description, size: "60x12"
+
+
+    %div.field
+      %form.label Link para imagem
+      %div.control
+        %form.input{:type =>"text", :placeholder => "#{product.image_url}"}
+  
+    %div.field
+      %form.label Preço do livro
+      %div.control
+        %form.input{:type =>"number", :placeholder => "#{product.price}"}
+
+    %div.control
+      %form.submit.button.button.is-link{:type => "submit"} Enviar para o Catálogo
+  
+  =link_to 'Back', products_path
+
+  /
+    ESSE seria a estrutura em que funciona o lançamento de erro
+
+  %div.container
+  %h1.title Novo Produto
+  = form_with(model: product, local: true) do |f|
+    -if product.errors.any?
+      #error_explanation
+        %h2
+          -pluralize(@product.errors.count, "error")
+          prohibited this product from being saved:
+        %ul
+          -product.errors.full_messages.each do |message|
+            %li= message
+
+    %div.field
+      %f.label Titulo
+      =f.text_field(:title)
+
+    %div.field
+      %f.label  Descrição
+      - if product.description == nil  
+        =f.text_area(:description)
+      - else
+        %text_area_tag.textarea{:name => :description}
+    
+    %div.field
+      %f.label Link para imagem
+      =f.text_field(:image_url)
+  
+    %div.field
+      %f.label Preço do livro
+      =f.text_field(:price)
+
+    .actions
+      =f.submit
+    

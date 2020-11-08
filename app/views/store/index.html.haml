@@ -1,0 +1,12 @@
+%p#notice= notice
+%h1 Your Pragmatic Catalog
+- cache @products do
+  - @products.each do |prod|
+    - cache prod do
+      .entry
+        %h3= prod.title
+        = sanitize(prod.description)
+        / Eu não entendi o que faz o sanitize - acredito que seja para o uso de tags com <p>
+        .price_line
+          %span.price= sprintf("R$ %0.02f", prod.price)
+          = button_to 'Add to Cart', line_items_path(product_id: prod)
